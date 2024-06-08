@@ -1,6 +1,3 @@
-Certainly! Here's the complete README.md code:
-
-```markdown
 # DetBogus: Fake News Detection System
 
 ## Overview
@@ -39,7 +36,47 @@ In today's digital age, the spread of fake news on social media is a pressing is
 
 ### 1. Install Python Libraries
 
-Create a Python script named `install_libraries.py` with the provided code to install the required libraries.
+First, create a Python script named `install_libraries.py` with the following content to install the required libraries:
+
+```python
+import subprocess
+
+# List of libraries to install
+libraries = [
+    "subprocess",
+    "os",
+    "roboflow",
+    "hashlib",
+    "requests",
+    "json",
+    "re",
+    "pandas",
+    "fuzzywuzzy",
+    "scikit-learn"
+]
+
+# Function to install a library using pip
+def install_library(library):
+    try:
+        print(f"Installing {library}...")
+        subprocess.check_call(["pip", "install", library])
+        print(f"Successfully installed {library}\n")
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to install {library}. Error: {e}\n")
+
+# Install each library
+for library in libraries:
+    install_library(library)
+
+# Additional installation for specific cases
+# Installing additional dependencies for fuzzywuzzy
+try:
+    print("Installing python-Levenshtein for fuzzywuzzy...")
+    subprocess.check_call(["pip", "install", "python-Levenshtein"])
+    print("Successfully installed python-Levenshtein\n")
+except subprocess.CalledProcessError as e:
+    print(f"Failed to install python-Levenshtein. Error: {e}\n")
+```
 
 Run the script with the following command:
 
@@ -49,7 +86,13 @@ python install_libraries.py
 
 ### 2. Install XAMPP and Replace `htdocs` Folder
 
-Install XAMPP on your system. After installation, replace the default `htdocs` folder with the `htdocs` folder from our project repository.
+Install XAMPP on your system. After installation, replace the default `htdocs` folder with the `htdocs` folder from our project repository:
+
+```bash
+# Replace the htdocs folder
+rm -r C:/xampp/htdocs
+cp -r path/to/your/project/htdocs C:/xampp/htdocs
+```
 
 ### 3. Configure IPFS Desktop
 
@@ -93,3 +136,5 @@ After completing all the above steps, your project should be set up and ready to
 By following this guide, you will have set up the necessary environment and configurations to run the project successfully. For any issues or further assistance, refer to the documentation of the respective services or contact the project maintainer.
 
 ---
+
+Feel free to customize this README further based on your specific project details and requirements.
