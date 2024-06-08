@@ -136,5 +136,3 @@ After completing all the above steps, your project should be set up and ready to
 By following this guide, you will have set up the necessary environment and configurations to run the project successfully. For any issues or further assistance, refer to the documentation of the respective services or contact the project maintainer.
 
 ---
-
-Feel free to customize this README further based on your specific project details and requirements.
